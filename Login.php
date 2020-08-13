@@ -16,7 +16,7 @@ if ($_POST) {
         $row = mysqli_fetch_array($data);
         $_SESSION['username'] = $row['UserId'];
         $_SESSION['isAdmin'] = $row['isAdmin'];
-        Redirect('index.php');
+        Redirect('index.php', "1");
     } else { // Inform the user that is was not successful
         $errorMsg = "Username or password is incorrect";
     }
