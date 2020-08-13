@@ -20,7 +20,12 @@ $PageData = PageContentGet($myDbConn, $PageId);
 // If admin is logged in, the page will be a form for the admin to submit
 // in order to change the content of the page.
 if ($_SESSION["isAdmin"] == 1) {
-    PageDisplayAdmin($PageData);
+    $row = mysqli_fetch_array($PageData);
+    PageDisplayAdmin($PageData, $PageId, $row['Header'], $row['SubText']);
+    
+    if (isset($_GET['subText']) && isset($_GET['header'])) {
+        UpdatePage($myDbConn, $PageData);
+    }
 } else {
     PageDisplay($PageData);
 }
@@ -40,13 +45,13 @@ else
     echo "<br /> Welcome. . . Click a menu link";
 }
 
-?>
-
-<?php
 // Always close db connection
 if ($myDbConn) {
     mysqli_close($myDbConn);
 }
+?>
+
+<?php
 
 include_once "MyFooter.php";
 ?>

@@ -41,14 +41,12 @@ function Redirect($page) {
     header('Location: ' . $page);
 }
 
-function PageDisplayAdmin($PageData) {
+function PageDisplayAdmin($PageData, $PageId, $header, $subText) {
     if ($PageData){
-        $row = mysqli_fetch_array($PageData);
-
         // Creates a form for the admin to change the values
-        echo '<input name="subText" value="' . $row['Header'] .  '">';
-        echo '<input name="header" value="' . $row['SubText'] .  '">';
-        echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $row) .'">Submit</button>';
+        echo '<input id="subText" value="' . $header .  '">';
+        echo '<input id="header" value="' . $subText .  '">';
+        echo '<a href="index.php?PageId='.$PageId.'&header='.$header.'&subText='.$subText.'">Submit</a>';
 
     } // End if
     else {
