@@ -39,11 +39,12 @@ function PageDisplay($PageData) {
 
 // Redirect to $page
 // Parameter $page should be something like 'index.php'
-function Redirect($page) {
-    header('Location: ' . $page);
-}
-function Redirect2($page, $pageId) {
-    header('Location: ' . $page . '?PageId=' . $pageId);
+function Redirect($page, $pageId = null) {
+    if ($pageId != null) {
+        header('Location: ' . $page . '?PageId=' . $pageId);
+    } else {
+        header('Location: ' . $page);
+    }
 }
 
 // Check if the current client is aurthorized and return the result
