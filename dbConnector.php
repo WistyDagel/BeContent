@@ -59,6 +59,19 @@ function MyPageremove($dbConn, $Id) {
     return @mysqli_query($dbConn, $query);
 }
 
+function UserGet($dbConn, $userId, $pswd) {
+    $query = "SELECT *
+    FROM Users u
+    WHERE u.UserId = ?
+    AND u.Pswd = ?
+    AND u.isActive = 1;";
+
+    $prep = $dbConn->prepare($query);
+    $prep->bind_param("ss", $userId, $pswd);
+    $prep->execute();
+    return $prep->get_result();
+}
+
 
 ?>
 

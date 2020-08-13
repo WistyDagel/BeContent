@@ -37,5 +37,9 @@ function PageDisplay($PageData) {
 
 }
 
+function Redirect($page) {
+    header('Location: ' . $page);
+}
+
 
 ?>
