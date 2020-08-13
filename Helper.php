@@ -1,5 +1,5 @@
 <?php
-// include_once "dbConnector.php";
+include_once "dbConnector.php";
 ?>
 
 <?php
@@ -35,6 +35,29 @@ function PageDisplay($PageData) {
         echo "No Page data to display <br />";
     }
 
+}
+
+function Redirect($page) {
+    header('Location: ' . $page);
+}
+
+function Auth() {
+    return (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1);
+}
+
+function PageDisplayAdmin($PageData) {
+    if ($PageData){
+        $row = mysqli_fetch_array($PageData);
+
+        // Creates a form for the admin to change the values
+        echo '<input name="subText" value="' . $row['Header'] .  '">';
+        echo '<input name="header" value="' . $row['SubText'] .  '">';
+        echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $row) .'">Submit</button>';
+
+    } // End if
+    else {
+        echo "No Page data to display <br />";
+    }
 }
 
 ?>

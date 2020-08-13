@@ -59,6 +59,26 @@ function MyPageremove($dbConn, $Id) {
     return @mysqli_query($dbConn, $query);
 }
 
+function UserGet($dbConn, $userId, $pswd) {
+    $query = "SELECT *
+    FROM Users u
+    WHERE u.UserId = ?
+    AND u.Pswd = ?
+    AND u.isActive = 1;";
+
+    $prep = $dbConn->prepare($query);
+    $prep->bind_param("ss", $userId, $pswd);
+    $prep->execute();
+    return $prep->get_result();
+}
+
+function UpdatePage($dbConn, $row) {
+    // Updates the page content
+    $query = "Update FROM WebElements SET Header = " . $row['Header'] . ", SubText = " . $row['SubText'] . " WHERE id = " . $row['id'];
+
+    return @mysqli_query($dbConn, $query);
+}
+
 
 ?>
 
