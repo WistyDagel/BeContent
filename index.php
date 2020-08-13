@@ -22,10 +22,15 @@ if (array_key_exists("PageId", $_GET) == true) {
     // If admin is logged in, the page will be a form for the admin to submit
     // in order to change the content of the page.
     if (Auth()) {
-        PageDisplayAdmin($PageData);
+        $row = mysqli_fetch_array($PageData);
+        PageDisplayAdmin($PageData, $PageId, $row['Header'], $row['SubText']);
+        
+        if (isset($_GET['subText']) && isset($_GET['header'])) {
+            UpdatePage($myDbConn, $PageData);
+        }
     } else {
         PageDisplay($PageData);
-    }    
+    }
     mysqli_free_result($PageData);
 
     // Display sub page links
