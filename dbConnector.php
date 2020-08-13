@@ -72,12 +72,12 @@ function UserGet($dbConn, $userId, $pswd) {
     return $prep->get_result();
 }
 
-function UpdatePage($dbConn, $PageData) {
-    echo 'something';
-    $row = mysqli_fetch_array($PageData);
+function UpdatePage($dbConn, $header, $subText, $id) {
     // Updates the page content
-    $query = "Update FROM WebElements SET Header = " . $row['Header'] . " SubText = " . $row['SubText'] . " WHERE id = " . $row['id'] . ";";
+    // echo $header;
 
+    $query = "Update WebElements SET Header = '" . $header . "', SubText = '" . $subText . "' WHERE id = " . $id . ";";
+    // echo $query;
     return @mysqli_query($dbConn, $query);
 }
 

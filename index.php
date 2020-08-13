@@ -23,11 +23,18 @@ $PageData = PageContentGet($myDbConn, $PageId);
 // If admin is logged in, the page will be a form for the admin to submit
 // in order to change the content of the page.
 if (Auth()) {
-    $row = mysqli_fetch_array($PageData);
-    PageDisplayAdmin($PageData, $PageId, $row['Header'], $row['SubText']);
     
-    if (isset($_GET['subText']) && isset($_GET['header'])) {
-        UpdatePage($myDbConn, $PageData);
+    PageDisplayAdmin($PageData);
+    
+    
+    if (isset($_POST['subText']) && isset($_POST['header'])) {
+        $row = mysqli_fetch_array($PageData);
+
+        // echo $_POST['subText'];
+        // echo $_POST['header'];
+        
+        UpdatePage($myDbConn, $_POST['subText'], $_POST['header'], $PageId);
+        Redirect2('index.php', $PageId);
     }
 } else {
     PageDisplay($PageData);
