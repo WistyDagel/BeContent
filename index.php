@@ -51,7 +51,7 @@ if (($PageId != "0") && ($SubPages) && ($SubPages->num_rows > 0)) {
 }
 else
 {
-    echo "<br /> Welcome. . . Click a menu link";
+    echo "<br /> <p>Welcome to our page! Please look at our menu options above.</p>";
 }
 
 ?>
