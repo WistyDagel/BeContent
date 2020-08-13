@@ -46,7 +46,7 @@ function PageContentGet($dbConn, $Id) {
         $return = @mysqli_query($dbConn, $query);
     }
 
-return $return;
+    return $return;
 }
 
 // ///////////////////////////////////////////////////
@@ -79,7 +79,6 @@ function UpdatePage($dbConn, $header, $subText, $id) {
     // echo $query;
     return @mysqli_query($dbConn, $query);
 }
-
 
 ?>
 
