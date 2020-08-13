@@ -24,7 +24,7 @@ else
     $_COOKIE["MyStyle"] = $myStyle;
 }
 
-$myTitle = "my title";
+$myTitle = "Be Content";
 $MyHeader = "My Header";
 
 ?>
