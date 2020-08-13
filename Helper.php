@@ -46,6 +46,11 @@ function Redirect($page, $pageId = null) {
         header('Location: ' . $page);
     }
 }
+function RedirectToActivePage() {
+    $dbConn = ConnGet();
+    $page = mysqli_fetch_array(PageContentGet($dbConn, "1"));
+    Redirect('index.php', $page['id']);
+}
 
 // Check if the current client is aurthorized and return the result
 function Auth() {
@@ -58,9 +63,12 @@ function PageDisplayAdmin($PageData) {
         $row = mysqli_fetch_array($PageData);
 
         echo '<form method="post">';
-        echo '<input type="text" name="subText" value="' . $row['Header'] .  '">';
-        echo '<input type="text" name="header" value="' . $row['SubText'] .  '">';
-        echo '<input type="submit" value="Push Edit">';
+        echo '<input type="text" name="header" value="' . $row['Header'] .  '">';
+        echo '<br/><br/>';
+        // echo '<input style="width: 50%;" value="">';
+        echo '<textarea type="text" name="subText" style="width: 500px; height: 200px;">' . $row['SubText'] .  '</textarea>';
+        echo '<br/><br/>';
+        echo '<input type="submit" value="Edit Content">';
         echo '</form>';
         echo '<br/><br/>';
         echo '<br/><br/>';

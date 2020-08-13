@@ -32,7 +32,7 @@ if (Auth()) {
         // echo $_POST['subText'];
         // echo $_POST['header'];
         
-        UpdatePage($myDbConn, $_POST['subText'], $_POST['header'], $PageId);
+        UpdatePage($myDbConn, $_POST['header'], $_POST['subText'], $PageId);
         Redirect('index.php', $PageId);
     }
 } else {

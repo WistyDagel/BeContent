@@ -50,35 +50,35 @@ ON DUPLICATE KEY UPDATE
 Title = 'Home', Header = 'Home Page', SubText = 'Feel free to look around our website!', SortOrder = 0, isActive = 1;
 
 INSERT INTO WebElements ( id, Title, Header, SubText, SortOrder, isActive)
-VALUES    (2, 'About', 'About Page', 'View our sub pages below:', 3, 1)
+VALUES    (2, 'About', 'About Page', 'View our sub pages below:', 0, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'About', Header = 'About Page', SubText = 'View our sub pages below:', SortOrder = 1, isActive = 1;
+Title = 'About', Header = 'About Page', SubText = 'View our sub pages below:', SortOrder = 0, isActive = 1;
 
 INSERT INTO WebElements ( id, Title, Header, SubText, SortOrder, isActive)
-VALUES    (3, 'Contact Us', 'Contact Us', 'View our sub pages below:', 4, 1)
+VALUES    (3, 'Contact Us', 'Contact Us', 'View our sub pages below:', 0, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Contact Us', Header = 'Contact Us', SubText = 'View our sub pages below:', SortOrder = 2, isActive = 1;
+Title = 'Contact Us', Header = 'Contact Us', SubText = 'View our sub pages below:', SortOrder = 0, isActive = 1;
 
 -- ---------------------
 -- Sub pages
 -- Note Parent Id points to the record with id=1
 INSERT INTO WebElements ( id, Title, Header, SubText, ParentPage, SortOrder, isActive)
-VALUES    (5, 'History', 'History Page', 'This is our history', 2, 1, 1)
+VALUES    (4, 'History', 'History Page', 'This is our history', 2, 1, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'History', Header = 'History Page', SubText = 'This is our history', ParentPage = 1, SortOrder = 1, isActive = 1;
+Title = 'History', Header = 'History Page', SubText = 'This is our history', ParentPage = 2, SortOrder = 1, isActive = 1;
 
 INSERT INTO WebElements ( id, Title, Header, SubText, ParentPage, SortOrder, isActive)
-VALUES    (6, 'Mission', 'Mission', 'This is or mission', 2, 2, 1)
+VALUES    (5, 'Mission', 'Mission', 'This is or mission', 2, 1, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Mission', Header = 'Mission', SubText = 'This is our mission', ParentPage = 1, SortOrder = 2, isActive = 1;
+Title = 'Mission', Header = 'Mission', SubText = 'This is our mission', ParentPage = 2, SortOrder = 1, isActive = 1;
 
 -- Note Parent Id points to the record with id=2
 INSERT INTO WebElements ( id, Title, Header, SubText, ParentPage, SortOrder, isActive)
-VALUES    (7, 'Locations', 'Locations Page', 'These are our locations', 3, 1, 1)
+VALUES    (6, 'Locations', 'Locations Page', 'These are our locations', 3, 1, 1)
 ON DUPLICATE KEY UPDATE
 Title = 'Locations', Header = 'Locations Page', SubText = 'These are our locations', ParentPage = 3, SortOrder = 1, isActive = 1;
 
 INSERT INTO WebElements ( id, Title, Header, SubText, ParentPage, SortOrder, isActive)
-VALUES    (8, 'Email', 'Email Page', 'Contact our emails below', 3, 2, 1)
+VALUES    (7, 'Email', 'Email Page', 'Contact our emails below', 3, 1, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Email', Header = 'Email Page', SubText = 'Contact our emails below', ParentPage = 3, SortOrder = 2, isActive = 1;
+Title = 'Email', Header = 'Email Page', SubText = 'Contact our emails below', ParentPage = 3, SortOrder = 1, isActive = 1;

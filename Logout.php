@@ -9,6 +9,6 @@ unset($_SESSION['username']);
 unset($_SESSION['isAdmin']);
 
 // Redirect (this is not a webpage)
-Redirect('index.php');
+RedirectToActivePage();
 
 ?>
