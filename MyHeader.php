@@ -45,7 +45,7 @@ $MyHeader = "Be Content with Your Content";
             echo '<link rel="stylesheet" href="/BeContent/DarkTheme.css">';
             break;
         case "3":
-            echo '<link rel="stylesheet" href="/BeContent/WhateverTheme.css">';
+            echo '<link rel="stylesheet" href="/BeContent/PastelTheme.css">';
             break;
         default:
             echo '<link rel="stylesheet" href="/BeContent/LightTheme.css">';

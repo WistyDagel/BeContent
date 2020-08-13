@@ -1,0 +1,118 @@
+html, body{
+    margin: 0;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 28pt;
+    background-color: #BC85A3;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #4a7dcf;
+    font-size: 24pt;
+}
+
+h3 {
+    color: #9799BA;
+    font-size: 18pt;
+}
+
+h4 {
+    color: #9799BA;
+    font-size: 14pt;
+}
+
+p {
+    color: #222;
+    font-size: 17px;
+}
+
+hr{
+    height: 4px;
+    background-color: #222;
+}
+
+.container {
+    margin: 25px;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    font-size: 17px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #c56274;
+    padding: 10px;
+    margin: 10px;
+}
+
+a:hover {
+    background-color: #e67388;
+    cursor: pointer;
+}
+
+.light {
+    background-color: #00b3b3;
+}
+
+.light:hover {
+    background-color: #03dac6;
+    cursor: pointer;
+}
+
+.dark {
+    background-color: #333;
+}
+
+.dark:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.whatever {
+    background-color: #c56274;
+}
+
+.whatever:hover {
+    background-color: #e67388;
+    cursor: pointer;
+}
+
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+  
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+table tr:nth-child(even){background-color: #03dac6;}
+  
+table tr:hover {background-color: #ddd;}
+  
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5200EE;
+    color: white;
+}
