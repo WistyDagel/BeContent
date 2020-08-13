@@ -25,7 +25,7 @@ else
 }
 
 $myTitle = "Be Content";
-$MyHeader = "My Header";
+$MyHeader = "Be Content with Your Content";
 
 ?>
 <!DOCTYPE html>
@@ -44,16 +44,16 @@ $MyHeader = "My Header";
     // Set style page
     switch ($myStyle) {
         case "1":
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle1.css">';
+            echo '<link rel="stylesheet" href="/BeContent/LightTheme.css">';
             break;
         case "2":
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle2.css">';
+            echo '<link rel="stylesheet" href="/BeContent/DarkTheme.css">';
             break;
         case "3":
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle3.css">';
+            echo '<link rel="stylesheet" href="/BeContent/WhateverTheme.css">';
             break;
         default:
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle1.css">';
+            echo '<link rel="stylesheet" href="/BeContent/LightTheme.css">';
             break;
     }
     ?>
@@ -79,17 +79,17 @@ mysqli_free_result($recordset);
 
 ?>
     <!-- Add a link for the custom settings -->
-    &nbsp; &nbsp;<a href="ThemeSettings.php">Theme Settings </a>
+    <a href="ThemeSettings.php">Theme Settings </a>
 
 <?php
 
-if (isset($_SESSION["username"])) {
-    if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1) {
-        echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
-    }
-    echo '  &nbsp; &nbsp;<a href="Logout.php">Log Out</a>';
-} else {
-    echo '  &nbsp; &nbsp;<a href="Login.php">Log In</a>';
+// Add a Admin link if. . .
+// $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code.
+if ($_SESSION["isAdmin"] == 1) {
+    echo '  <a href="ManagePages.php">Manage Pages</a>';
+}
+else {
+    echo '  <a href="Login.php">Login</a>';
 }
 
 

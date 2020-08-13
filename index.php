@@ -45,6 +45,7 @@ else
     echo "<br /> Welcome. . . Click a menu link";
 }
 
+
 // Always close db connection
 if ($myDbConn) {
     mysqli_close($myDbConn);

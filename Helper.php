@@ -11,7 +11,7 @@ function MenuDisplay($dataset) {
     if ($dataset){
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
         while($row = mysqli_fetch_array($dataset)){
-            echo ' &nbsp; &nbsp; <a href="Index.php?PageId=' . $row['id'] .  '" >' . $row['Title'] . '</a>';
+            echo '<a href="Index.php?PageId=' . $row['id'] .  '" >' . $row['Title'] . '</a>';
         }
     } // End if
     else {
@@ -27,8 +27,8 @@ function PageDisplay($PageData) {
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
         $row = mysqli_fetch_array($PageData);
 
-        echo ' &nbsp; &nbsp; <h2> ' . $row['Header'] .  ' </h2> <br />';
-        echo ' &nbsp; &nbsp; <p> ' . $row['SubText'] .  '</p> <br />';
+        echo ' <h2> ' . $row['Header'] .  ' </h2> <br />';
+        echo ' <p> ' . $row['SubText'] .  '</p> <br />';
 
     } // End if
     else {
@@ -39,6 +39,10 @@ function PageDisplay($PageData) {
 
 function Redirect($page) {
     header('Location: ' . $page);
+}
+
+function Auth() {
+    return (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1);
 }
 
 function PageDisplayAdmin($PageData, $PageId, $header, $subText) {
