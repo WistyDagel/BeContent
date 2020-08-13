@@ -46,6 +46,11 @@ function Redirect($page, $pageId = null) {
         header('Location: ' . $page);
     }
 }
+function RedirectToActivePage() {
+    $dbConn = ConnGet();
+    $page = mysqli_fetch_array(PageContentGet($dbConn, "1"));
+    Redirect('index.php', $page['id']);
+}
 
 // Check if the current client is aurthorized and return the result
 function Auth() {
