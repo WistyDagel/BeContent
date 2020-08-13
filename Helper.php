@@ -59,8 +59,11 @@ function PageDisplayAdmin($PageData) {
 
         echo '<form method="post">';
         echo '<input type="text" name="subText" value="' . $row['Header'] .  '">';
-        echo '<input type="text" name="header" value="' . $row['SubText'] .  '">';
-        echo '<input type="submit" value="Push Edit">';
+        echo '<br/><br/>';
+        // echo '<input style="width: 50%;" value="">';
+        echo '<textarea  type="text" name="header" style="width:500px; height:200px;">' . $row['SubText'] .  '</textarea>';
+        echo '<br/><br/>';
+        echo '<input type="submit" value="Edit Content">';
         echo '</form>';
         echo '<br/><br/>';
         echo '<br/><br/>';
