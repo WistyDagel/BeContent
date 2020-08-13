@@ -52,23 +52,40 @@ return $return;
 // ///////////////////////////////////////////////////
 // Get all the page records
 function PageRemove($dbConn, $Id) {
-    // Set page to inActive
-    $query = "Update FROM WebElements set isActive = 0 where id = " . $Id;
+    // Set page isActive to false
+    $query = "UPDATE WebElements
+              SET isActive = 0
+              WHERE id = ?";
 
-    return @mysqli_query($dbConn, $query);
+    $stmt = $dbConn->prepare($query);
+    $stmt->bind_param("s", $Id);
+    $stmt->execute();
+    return $stmt->get_result();
+}
+
+function PageRestore($dbConn, $Id) {
+    // Set page isActive to true
+    $query = "UPDATE WebElements
+              SET isActive = 1
+              WHERE id = ?";
+
+    $stmt = $dbConn->prepare($query);
+    $stmt->bind_param("s", $Id);
+    $stmt->execute();
+    return $stmt->get_result();
 }
 
 function UserGet($dbConn, $userId, $pswd) {
     $query = "SELECT *
-    FROM Users u
-    WHERE u.UserId = ?
-    AND u.Pswd = ?
-    AND u.isActive = 1;";
+              FROM Users u
+              WHERE u.UserId = ?
+              AND u.Pswd = ?
+              AND u.isActive = 1;";
 
-    $prep = $dbConn->prepare($query);
-    $prep->bind_param("ss", $userId, $pswd);
-    $prep->execute();
-    return $prep->get_result();
+    $stmt = $dbConn->prepare($query);
+    $stmt->bind_param("ss", $userId, $pswd);
+    $stmt->execute();
+    return $stmt->get_result();
 }
 
 function UpdatePage($dbConn, $header, $subText, $id) {
