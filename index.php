@@ -26,7 +26,6 @@ if (Auth()) {
     
     PageDisplayAdmin($PageData);
     
-    
     if (isset($_POST['subText']) && isset($_POST['header'])) {
         $row = mysqli_fetch_array($PageData);
 
