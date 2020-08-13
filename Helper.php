@@ -42,7 +42,7 @@ function PageDisplay($PageData) {
 function Redirect($page) {
     header('Location: ' . $page);
 }
-function Redirect2($page, $pageId) {
+function RedirectWithPageId($page, $pageId) {
     header('Location: ' . $page . '?PageId=' . $pageId);
 }
 
