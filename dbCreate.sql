@@ -16,7 +16,6 @@ create table if not exists Users(
 create table if not exists WebElements(
  id int not null AUTO_INCREMENT PRIMARY KEY,
  Title varchar(25) Not null,
--- Category varchar(25),
  Header varchar(25),
  SubText varchar(225),
  ParentPage int DEFAULT 0,
