@@ -41,6 +41,10 @@ function Redirect($page) {
     header('Location: ' . $page);
 }
 
+function Auth() {
+    return (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1);
+}
+
 function PageDisplayAdmin($PageData) {
     if ($PageData){
         $row = mysqli_fetch_array($PageData);

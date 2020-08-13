@@ -1,6 +1,11 @@
 <?php
 include_once "MyHeader.php";
 
+include_once 'Helper.php';
+if(!Auth()) {
+    Redirect('index.php');
+}
+
 // Use this page to change the value of a page
 
 ?>
