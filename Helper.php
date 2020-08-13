@@ -48,6 +48,7 @@ function Auth() {
 function PageDisplayAdmin($PageData, $PageId, $header, $subText) {
     if ($PageData){
         // Creates a form for the admin to change the values
+        $row = mysqli_fetch_array($PageData);
         echo '<input name="subText" value="' . $row['Header'] .  '">';
         echo '<input name="header" value="' . $row['SubText'] .  '">';
         echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $row) .'">Submit</button>';
