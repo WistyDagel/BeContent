@@ -1,46 +1,60 @@
 <?php
 include_once "MyHeader.php";
 
+// Use this page to change the value of a page
+
+// Prevent non-admins fom accessing the pages
 include_once 'Helper.php';
 if(!Auth()) {
     Redirect('index.php');
 }
 
-// Use this page to change the value of a page
+// Get pages from database
+$dbConn = ConnGet();
+$pages = MyPagesAllGet($dbConn);
 
 ?>
 
+<!-- Form to send POST data -->
+<form method="post">
+
+<!-- Beginning of pages table and table headers -->
 <table>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Header</th>
-        <th>SubText</th>
-        <th>ParentPage</th>
-        <th>SortOrder</th>
-        <th>IsActive</th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <td>A</td>
-        <td>B</td>
-        <td>C</td>
-        <td>D</td>
-        <td>E</td>
-        <td>F</td>
-        <td>G</td>
-        <td>Edit</td>
-        <td>Delete</td>
-    </tr>
+<tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Header</th>
+    <th>SubText</th>
+    <th>ParentPage</th>
+    <th>SortOrder</th>
+    <th>IsActive</th>
+    <th></th>
+    <th></th>
+</tr>
+
+<?php
+
+// Generate table row for each page
+while ($page = mysqli_fetch_array($pages)) {
+    echo '<tr>';
+    echo '<td>' . $page['id'] . '</td>';
+    echo '<td>' . $page['Title'] . '</td>';
+    echo '<td>' . $page['Header'] . '</td>';
+    echo '<td>' . $page['SubText'] . '</td>';
+    echo '<td>' . $page['ParentPage'] . '</td>';
+    echo '<td>' . $page['SortOrder'] . '</td>';
+    echo '<td>' . $page['isActive'] . '</td>';
+    echo '<td><input type="submit" name="edit" value="Edit" /></td>';
+    echo '<td><input type="submit" name="delete" value="Delete" /></td>';
+    echo '</tr>';
+}
+
+?>
+
+<!-- Close tags -->
 </table>
 
-Add code (form) to modify the database values for a page.
-<br />
-<br />
-My sugestion: Create a Table that lists all the pages (records) in the database. Each record will have an Edit and Delete link.
-<br />
-Each link takes the person to a page where they can edit the content
+</form>
 
 <?php
 include_once "MyHeader.php";

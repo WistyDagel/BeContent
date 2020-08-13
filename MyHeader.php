@@ -71,21 +71,17 @@ $recordset = MyPagesGet($myDbConn, 0);
 MenuDisplay($recordset);
 mysqli_free_result($recordset);
 
-?>
-    <!-- Add a link for the custom settings -->
-    <a href="ThemeSettings.php">Theme Settings </a>
-
-<?php
-
 // Add a Admin link if. . .
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code.
 if (isset($_SESSION["username"])) {
     if (Auth()) {
-        echo '  <a href="ManagePages.php">Manage Pages</a>';
+        // Add a link for the custom settings
+        echo '<a href="ThemeSettings.php">Theme Settings </a>';
+        echo '<a href="ManagePages.php">Manage Pages</a>';
     }
-    echo '  <a href="Logout.php">Log Out</a>';
+    echo '<a href="Logout.php">Log Out</a>';
 } else {
-    echo '  <a href="Login.php">Log In</a>';
+    echo '<a href="Login.php">Log In</a>';
 }
 
 

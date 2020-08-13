@@ -2,6 +2,10 @@
 include_once "MyHeader.php";
 include_once "Helper.php";
 
+if(!Auth()) {
+    Redirect('index.php');
+}
+
 //Retrieves the current value of the ChangeTheme based on the user selection
 if ($_POST) {
     $changedTheme = $_POST['ChangeTheme'];

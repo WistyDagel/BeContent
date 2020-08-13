@@ -51,9 +51,8 @@ return $return;
 
 // ///////////////////////////////////////////////////
 // Get all the page records
-function MyPageremove($dbConn, $Id) {
-
-    // Never delete a page. set it to incative
+function PageRemove($dbConn, $Id) {
+    // Set page to inActive
     $query = "Update FROM WebElements set isActive = 0 where id = " . $Id;
 
     return @mysqli_query($dbConn, $query);
