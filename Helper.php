@@ -58,10 +58,10 @@ function PageDisplayAdmin($PageData) {
         $row = mysqli_fetch_array($PageData);
 
         echo '<form method="post">';
-        echo '<input type="text" name="subText" value="' . $row['Header'] .  '">';
+        echo '<input type="text" name="header" value="' . $row['Header'] .  '">';
         echo '<br/><br/>';
         // echo '<input style="width: 50%;" value="">';
-        echo '<textarea  type="text" name="header" style="width:500px; height:200px;">' . $row['SubText'] .  '</textarea>';
+        echo '<textarea type="text" name="subText" style="width: 500px; height: 200px;">' . $row['SubText'] .  '</textarea>';
         echo '<br/><br/>';
         echo '<input type="submit" value="Edit Content">';
         echo '</form>';
