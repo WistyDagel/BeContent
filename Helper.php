@@ -37,4 +37,19 @@ function PageDisplay($PageData) {
 
 }
 
+function PageDisplayAdmin($PageData) {
+    if ($PageData){
+        $row = mysqli_fetch_array($PageData);
+
+        // Creates a form for the admin to change the values
+        echo '<input name="subText" value="' . $row['Header'] .  '">';
+        echo '<input name="header" value="' . $row['SubText'] .  '">';
+        echo '<button name="a" onclick="updatePage()">Submit</button>';
+
+    } // End if
+    else {
+        echo "No Page data to display <br />";
+    }
+}
+
 ?>
