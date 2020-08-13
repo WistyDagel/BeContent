@@ -21,9 +21,6 @@ if ($_POST) {
     <h3>Please select from our themes below:</h3>
     <div class='flexContainer'>
         <form method="post">
-            <!-- <a class='light' type="submit" name="ChangeTheme" value="1" >Light Theme</a>
-            <a class='dark' type="submit" name="ChangeTheme" value="2" >Dark Theme</a>
-            <a class='whatever' type="submit" name="ChangeTheme" value="3" >Whatever Theme</a> -->
             <input type="radio" name="ChangeTheme" value="1" <?php if ($_SESSION["MyStyle"] == '1') echo 'checked' ?>/>
             <label for="1">Light Theme</label>
             <input type="radio" name="ChangeTheme" value="2" <?php if ($_SESSION["MyStyle"] == '2') echo 'checked' ?>/>

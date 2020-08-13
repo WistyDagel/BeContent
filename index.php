@@ -34,7 +34,7 @@ if (Auth()) {
         // echo $_POST['header'];
         
         UpdatePage($myDbConn, $_POST['subText'], $_POST['header'], $PageId);
-        Redirect2('index.php', $PageId);
+        Redirect('index.php', $PageId);
     }
 } else {
     PageDisplay($PageData);
