@@ -2,12 +2,12 @@
 include_once "MyHeader.php";
 include_once "Helper.php";
 
-// $changedTheme = "test";
+$changedTheme = "test";
+
 // Use this page to change the value of
 // $_COOKIE["MyStyle"] or such
 if ($_POST) {
     $changedTheme = $_POST['ChangeTheme'];
-    // echo $changedTheme;
     $_COOKIE['MyStyle'] = $changedTheme;
     Redirect("ThemeSettings.php");
 }
