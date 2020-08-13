@@ -14,39 +14,41 @@ if (array_key_exists("PageId", $_GET) == true) {
 ?>
 
 <div class='container'>
-    <?php
 
-    // Get given page
-    $PageData = PageContentGet($myDbConn, $PageId);
-    // Display page data 
-    // If admin is logged in, the page will be a form for the admin to submit
-    // in order to change the content of the page.
-    if (Auth()) {
-        $row = mysqli_fetch_array($PageData);
-        PageDisplayAdmin($PageData, $PageId, $row['Header'], $row['SubText']);
-        
-        if (isset($_GET['subText']) && isset($_GET['header'])) {
-            UpdatePage($myDbConn, $PageData);
-        }
-    } else {
-        PageDisplay($PageData);
+<?php
+$myDbConn = ConnGet();
+// Get given page
+$PageData = PageContentGet($myDbConn, $PageId);
+// Display page data 
+// If admin is logged in, the page will be a form for the admin to submit
+// in order to change the content of the page.
+if (Auth()) {
+    $row = mysqli_fetch_array($PageData);
+    PageDisplayAdmin($PageData, $PageId, $row['Header'], $row['SubText']);
+    
+    if (isset($_GET['subText']) && isset($_GET['header'])) {
+        // TODO broken
+        // UpdatePage($myDbConn, $PageData);
     }
-    mysqli_free_result($PageData);
+} else {
+    PageDisplay($PageData);
+}
+mysqli_free_result($PageData);
 
-    // Display sub page links
+// Display sub page links
 
-    $SubPages = MyPagesGet($myDbConn, $PageId); 
-    if (($PageId != "0") && ($SubPages) && ($SubPages->num_rows > 0)) {
-        // Display the main menu
-        MenuDisplay($SubPages);
-        mysqli_free_result($SubPages);
-    }
-    else
-    {
-        echo "<br /> Welcome. . . Click a menu link";
-    }
+$SubPages = MyPagesGet($myDbConn, $PageId); 
+if (($PageId != "0") && ($SubPages) && ($SubPages->num_rows > 0)) {
+    // Display the main menu
+    MenuDisplay($SubPages);
+    mysqli_free_result($SubPages);
+}
+else
+{
+    echo "<br /> Welcome. . . Click a menu link";
+}
 
-    ?>
+?>
 </div>
 
 <!-- // Get given page

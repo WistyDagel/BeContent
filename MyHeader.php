@@ -8,7 +8,7 @@ include_once "Helper.php";
 
 <?php 
 
-$myStyle = "1";
+// $myStyle = "1";
 
 // Check for Priv setting
 if (isset($_SESSION["isAdmin"]) == false) {
