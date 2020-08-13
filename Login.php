@@ -12,6 +12,7 @@ if ($_POST) {
     $data = UserGet($dbConn, $_POST['username'], $_POST['password']);
 
     if (mysqli_num_rows($data) > 0) { // Do something with the data
+        // Create sessions and go to index.php
         $row = mysqli_fetch_array($data);
         $_SESSION['username'] = $row['UserId'];
         $_SESSION['isAdmin'] = $row['isAdmin'];
