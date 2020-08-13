@@ -37,6 +37,11 @@ p {
     font-size: 17px;
 }
 
+label {
+    color: #000;
+    font-size: 17px;
+}
+
 hr{
     height: 4px;
     background-color: #000;

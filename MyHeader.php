@@ -14,13 +14,13 @@ if (!isset($_SESSION["isAdmin"])) {
     $_SESSION["isAdmin"] = 0; // Set default
 }
 
-// Check for style setting
+// Check for the current theme setting
 $myStyle = "1";
-if (isset($_COOKIE["MyStyle"])) {
-    $myStyle = $_COOKIE["MyStyle"];
+if (isset($_SESSION["MyStyle"])) {
+    $myStyle = $_SESSION["MyStyle"];
 } else {
-    // Set default style
-    $_COOKIE["MyStyle"] = $myStyle;
+    // Set default style to myStyle
+    $_SESSION["MyStyle"] = $myStyle;
 }
 
 $myTitle = "Be Content";
@@ -35,7 +35,7 @@ $MyHeader = "Be Content with Your Content";
   <title><?php echo $myTitle ?></title>
 
     <?php
-    // Set style page
+    // Set style page based off of current value
     switch ($myStyle) {
         case "1":
             echo '<link rel="stylesheet" href="/BeContent/LightTheme.css">';

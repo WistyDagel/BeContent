@@ -3,7 +3,7 @@ html, body{
 }
 
 body {
-    background-color: #333;
+    background-color: #000;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
@@ -12,7 +12,7 @@ h1 {
     color: #fff;
     margin: 0;
     font-size: 28pt;
-    background-color: #00b3b3;
+    background-color: #222;
     padding: 15px;
     margin-bottom: 15px;
 }
@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-    color: #03dac6;
+    color: #c56274;
     font-size: 18pt;
 }
 
@@ -33,6 +33,11 @@ h4 {
 }
 
 p {
+    color: #fff;
+    font-size: 17px;
+}
+
+label {
     color: #fff;
     font-size: 17px;
 }
@@ -57,13 +62,13 @@ a {
     color: #fff;
     font-weight: bold;
     text-decoration: none;
-    background-color: #3700b3;
+    background-color: #00b3b3;
     padding: 10px;
     margin: 10px;
 }
 
 a:hover {
-    background-color: #5200EE;
+    background-color: #03dac6;
     cursor: pointer;
 }
 
