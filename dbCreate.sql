@@ -83,7 +83,3 @@ INSERT INTO MyWebDocs ( id, Title, Header1, Text1, ParentPage, SortOrder, isActi
 VALUES    (8, 'Something 2', 'Sub Header number 2', 'My text, asfaf af af af a sag asf saf', 2, 4, 1)
 ON DUPLICATE KEY UPDATE
 Title = 'Something 2', Header1 = 'Sub Header number 2', Text1 = 'My text, asfaf af af af a sag asf saf', ParentPage = 2, SortOrder = 4, isActive = 1;
-
-
-
-
