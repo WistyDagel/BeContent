@@ -27,8 +27,7 @@ if (Auth()) {
     PageDisplayAdmin($PageData, $PageId, $row['Header'], $row['SubText']);
     
     if (isset($_GET['subText']) && isset($_GET['header'])) {
-        // TODO broken
-        // UpdatePage($myDbConn, $PageData);
+        UpdatePage($myDbConn, $PageData);
     }
 } else {
     PageDisplay($PageData);

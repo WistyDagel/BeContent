@@ -54,7 +54,7 @@ function PageDisplayAdmin($PageData, $PageId, $header, $subText) {
         $row = mysqli_fetch_array($PageData);
         echo '<input name="subText" value="' . $row['Header'] .  '">';
         echo '<input name="header" value="' . $row['SubText'] .  '">';
-        echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $row) .'">Submit</button>';
+        echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $PageData) .'">Submit</button>';
         echo '<br/><br/>';
         echo '<br/><br/>';
 

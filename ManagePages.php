@@ -10,6 +10,31 @@ if(!Auth()) {
 
 ?>
 
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Header</th>
+        <th>SubText</th>
+        <th>ParentPage</th>
+        <th>SortOrder</th>
+        <th>IsActive</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+        <td>G</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+</table>
+
 Add code (form) to modify the database values for a page.
 <br />
 <br />
