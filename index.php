@@ -19,7 +19,7 @@ $PageData = PageContentGet($myDbConn, $PageId);
 // Display page data 
 // If admin is logged in, the page will be a form for the admin to submit
 // in order to change the content of the page.
-if ($_SESSION['Admin'] == 1) {
+if ($_SESSION["isAdmin"] == 1) {
     PageDisplayAdmin($PageData);
 } else {
     PageDisplay($PageData);

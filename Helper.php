@@ -1,5 +1,5 @@
 <?php
-// include_once "dbConnector.php";
+include_once "dbConnector.php";
 ?>
 
 <?php
@@ -44,7 +44,7 @@ function PageDisplayAdmin($PageData) {
         // Creates a form for the admin to change the values
         echo '<input name="subText" value="' . $row['Header'] .  '">';
         echo '<input name="header" value="' . $row['SubText'] .  '">';
-        echo '<button name="a" onclick="updatePage()">Submit</button>';
+        echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $row) .'">Submit</button>';
 
     } // End if
     else {

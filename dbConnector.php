@@ -59,6 +59,13 @@ function MyPageremove($dbConn, $Id) {
     return @mysqli_query($dbConn, $query);
 }
 
+function UpdatePage($dbConn, $row) {
+    // Updates the page content
+    $query = "Update FROM WebElements SET Header = " . $row['Header'] . ", SubText = " . $row['SubText'] . " WHERE id = " . $row['id'];
+
+    return @mysqli_query($dbConn, $query);
+}
+
 
 ?>
 
