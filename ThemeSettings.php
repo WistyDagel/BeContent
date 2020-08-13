@@ -6,7 +6,15 @@ include_once "MyHeader.php";
 
 ?>
 
-Add code (form) to change style preferences. 
+<div class='container'>
+    <h3>Please select from our themes below:</h3>
+    <div class='flexContainer'>
+        <div class='button'>Light Theme</div>
+        <div class='button'>Dark Theme</div>
+        <div class='button'>Whatever Theme</div>
+    </div>
+</div>
+
 
 <?php
 include_once "MyHeader.php";
