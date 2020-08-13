@@ -42,19 +42,25 @@ function PageDisplay($PageData) {
 function Redirect($page) {
     header('Location: ' . $page);
 }
+function Redirect2($page, $pageId) {
+    header('Location: ' . $page . '?PageId=' . $pageId);
+}
 
 // Check if the current client is aurthorized and return the result
 function Auth() {
     return (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1);
 }
 
-function PageDisplayAdmin($PageData, $PageId, $header, $subText) {
+function PageDisplayAdmin($PageData) {
     if ($PageData){
         // Creates a form for the admin to change the values
         $row = mysqli_fetch_array($PageData);
-        echo '<input name="subText" value="' . $row['Header'] .  '">';
-        echo '<input name="header" value="' . $row['SubText'] .  '">';
-        echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $PageData) .'">Submit</button>';
+
+        echo '<form method="post">';
+        echo '<input type="text" name="subText" value="' . $row['Header'] .  '">';
+        echo '<input type="text" name="header" value="' . $row['SubText'] .  '">';
+        echo '<input type="submit" value="Push Edit">';
+        echo '</form>';
         echo '<br/><br/>';
         echo '<br/><br/>';
 
