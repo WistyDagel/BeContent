@@ -5,6 +5,7 @@ html, body{
 body {
     background-color: #333;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 h1 {
@@ -47,6 +48,8 @@ hr{
 
 .flexContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a {

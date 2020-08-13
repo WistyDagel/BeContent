@@ -16,11 +16,11 @@ if (!isset($_SESSION["isAdmin"])) {
 
 // Check for style setting
 $myStyle = "1";
-if (isset($_SESSION["MyStyle"])) {
-    $myStyle = $_SESSION["MyStyle"];
+if (isset($_COOKIE["MyStyle"])) {
+    $myStyle = $_COOKIE["MyStyle"];
 } else {
     // Set default style
-    $_SESSION["MyStyle"] = $myStyle;
+    $_COOKIE["MyStyle"] = $myStyle;
 }
 
 $myTitle = "Be Content";
