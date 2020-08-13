@@ -5,6 +5,7 @@ html, body{
 body {
     background-color: aliceblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 h1 {
@@ -47,20 +48,8 @@ hr{
 
 .flexContainer {
     display: flex;
-}
-
-.button {
-    font-size: 17px;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: #00b3b3;
-    padding: 10px;
-    margin-right: 10px;
-}
-
-.button:hover {
-    background-color: #03dac6;
+    justify-content: center;
+    align-items: center;
 }
 
 a {
@@ -75,6 +64,34 @@ a {
 
 a:hover {
     background-color: #5200EE;
+    cursor: pointer;
+}
+
+.light {
+    background-color: #00b3b3;
+}
+
+.light:hover {
+    background-color: #03dac6;
+    cursor: pointer;
+}
+
+.dark {
+    background-color: #333;
+}
+
+.dark:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.whatever {
+    background-color: #c56274;
+}
+
+.whatever:hover {
+    background-color: #e67388;
+    cursor: pointer;
 }
 
 table {

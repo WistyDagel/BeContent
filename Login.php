@@ -27,8 +27,10 @@ if ($_POST) {
 <label for="username">Username: </label>
 <input type="text" name="username" id="username" required />
 <br/>
+<br/>
 <label for="password">Password: </label>
 <input type="password" name="password" id="password" required />
+<br/>
 <br/>
 <input type="submit" />
 <p class="error"><?php echo $errorMsg; ?></p>

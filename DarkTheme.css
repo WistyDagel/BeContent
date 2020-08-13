@@ -3,61 +3,93 @@ html, body{
 }
 
 body {
-    background-color: #2e2e2e;
+    background-color: #333;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1 {
-    color: #a71f23;
-    margin: 10px;
+    color: #fff;
+    margin: 0;
     font-size: 28pt;
+    background-color: #00b3b3;
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
 h2 {
-    color: #ccc7ae;
-    margin: 25px;
+    color: #3700b3;
     font-size: 24pt;
 }
 
 h3 {
-    color: #ccc7ae;
-    margin: 25px;
+    color: #03dac6;
     font-size: 18pt;
 }
 
 h4 {
-    color: #ccc7ae;
+    color: #3700b3;
     font-size: 14pt;
 }
 
 p {
-    color: #fafbf8;
+    color: #fff;
     font-size: 17px;
 }
 
 hr{
     height: 4px;
-    background-color: #ccc7ae;
+    background-color: #fff;
 }
 
 .container {
     margin: 25px;
 }
 
+.flexContainer {
+    display: flex;
+}
+
 a {
     font-size: 17px;
-    color: #a71f23;
+    color: #fff;
     font-weight: bold;
     text-decoration: none;
-    background-color: #ddd;
+    background-color: #3700b3;
     padding: 10px;
-    margin-right: 5px;
+    margin: 10px;
 }
 
 a:hover {
-    color: #88171a;
+    background-color: #5200EE;
+    cursor: pointer;
 }
 
+.light {
+    background-color: #00b3b3;
+}
+
+.light:hover {
+    background-color: #03dac6;
+    cursor: pointer;
+}
+
+.dark {
+    background-color: #333;
+}
+
+.dark:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.whatever {
+    background-color: #c56274;
+}
+
+.whatever:hover {
+    background-color: #e67388;
+    cursor: pointer;
+}
 
 table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -70,7 +102,7 @@ table td, table th {
     padding: 8px;
 }
   
-table tr:nth-child(even){background-color: #95917e;}
+table tr:nth-child(even){background-color: #03dac6;}
   
 table tr:hover {background-color: #ddd;}
   
@@ -78,6 +110,6 @@ table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #88171a;
+    background-color: #5200EE;
     color: white;
 }

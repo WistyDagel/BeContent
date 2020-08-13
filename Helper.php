@@ -53,6 +53,8 @@ function PageDisplayAdmin($PageData) {
         echo '<input name="subText" value="' . $row['Header'] .  '">';
         echo '<input name="header" value="' . $row['SubText'] .  '">';
         echo '<button name="a" onclick="' . UpdatePage(ConnGet(), $row) .'">Submit</button>';
+        echo '<br/><br/>';
+        echo '<br/><br/>';
 
     } // End if
     else {

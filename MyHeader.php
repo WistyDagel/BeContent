@@ -15,13 +15,13 @@ if (isset($_SESSION["isAdmin"]) == false) {
     $_SESSION["isAdmin"] = 0; // Set default
 }
 // Check for style setting
-if (isset($_COOKIE["MyStyle"]) == true) {
-    $myStyle = $_COOKIE["MyStyle"];
+if (isset($_SESSION["MyStyle"]) == true) {
+    $myStyle = $_SESSION["MyStyle"];
 }
 else
 {
     // Set default style
-    $_COOKIE["MyStyle"] = $myStyle;
+    $_SESSION["MyStyle"] = $myStyle;
 }
 
 $myTitle = "Be Content";
@@ -35,11 +35,6 @@ $MyHeader = "Be Content with Your Content";
   <meta content="text/html; charset=ISO-8859-1"  http-equiv="content-type">
   <title><?php echo $myTitle ?></title>
 
-    <!--
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery.js"></script>
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.js"></script>
-        <link href="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.css" rel="stylesheet" />
-        -->
     <?php
     // Set style page
     switch ($myStyle) {
@@ -85,11 +80,13 @@ mysqli_free_result($recordset);
 
 // Add a Admin link if. . .
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code.
-if ($_SESSION["isAdmin"] == 1) {
-    echo '  <a href="ManagePages.php">Manage Pages</a>';
-}
-else {
-    echo '  <a href="Login.php">Login</a>';
+if (isset($_SESSION["username"])) {
+    if (Auth()) {
+        echo '  <a href="ManagePages.php">Manage Pages</a>';
+    }
+    echo '  <a href="Logout.php">Log Out</a>';
+} else {
+    echo '  <a href="Login.php">Log In</a>';
 }
 
 
